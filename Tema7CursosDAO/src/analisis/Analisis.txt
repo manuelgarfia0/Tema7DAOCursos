@@ -1,0 +1,8 @@
+public class Curso
+	- int id
+	- String nombre
+	- String descripcion
+	- String añoEscolar
+-------------------------------
+	+ Curso(String nombre, String descripcion, String añoEscolar)
+	
