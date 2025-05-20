@@ -3,6 +3,26 @@ public class Curso
 	- String nombre
 	- String descripcion
 	- String añoEscolar
--------------------------------
+  -------------------------------
 	+ Curso(String nombre, String descripcion, String añoEscolar)
+	+ int getId()
+	+ String getNombre()
+	+ void setNombre(String nombre)
+	+ String getDescripcion()
+	+ void setDescripcion(String descripcion)
+	+ String getAñoEscolar()
+	+ void setAñoEscolar(String añoEscolar)
+	
+public class CursoDAO
+	- Conection conexion
+  -------------------------------
+	+ CursoDAO()
+	+ Connection getConexion()
+	+ void crearCurso(Curso cur)
+	+ ArrayList<String> listarCursos(Curso cur)
+	+ profesorACurso
+	+ listarEstudiantesCurso
+	+ void eliminarCurso(Curso cur)
+	
+public class Main
 	
