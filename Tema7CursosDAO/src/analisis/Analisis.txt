@@ -24,10 +24,10 @@ public class CursoDAO
 	+ CursoDAO()
 	+ Connection getConexion()
 	+ void crearCurso(Curso cur)
-	+ ArrayList<String> listarCursos(Curso cur)
+	+ ArrayList<String> listarCursos()
 	+ profesorACurso
 	+ listarEstudiantesCurso
-	+ int eliminarCurso(Curso cur, int idCurso)
+	+ int eliminarCurso(int idCurso)
 	
 public class Main
 	

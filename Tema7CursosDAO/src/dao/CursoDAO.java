@@ -43,7 +43,7 @@ public class CursoDAO {
 		}
 	}
 
-	public ArrayList<Curso> listarCursos(Curso cur) {
+	public ArrayList<Curso> listarCursos() {
 
 		ArrayList<Curso> lista = new ArrayList<>();
 		Curso curso;
