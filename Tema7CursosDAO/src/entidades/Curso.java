@@ -21,7 +21,7 @@ public class Curso {
 	/**
 	 * Atributo año escolar del curso.
 	 */
-	private String añoEscolar;
+	private int añoEscolar;
 
 	/**
 	 * Constructor de Curso con todos sus atributos menos id que se autoincrementa.
@@ -30,7 +30,7 @@ public class Curso {
 	 * @param descripcion descripción del curso.
 	 * @param añoEscolar  año escolar del curso.
 	 */
-	public Curso(String nombre, String descripcion, String añoEscolar) {
+	public Curso(String nombre, String descripcion, int añoEscolar) {
 		super();
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -87,7 +87,7 @@ public class Curso {
 	 * 
 	 * @return añoEscolar
 	 */
-	public String getAñoEscolar() {
+	public int getAñoEscolar() {
 		return añoEscolar;
 	}
 
@@ -96,7 +96,7 @@ public class Curso {
 	 * 
 	 * @param añoEscolar
 	 */
-	public void setAñoEscolar(String añoEscolar) {
+	public void setAñoEscolar(int añoEscolar) {
 		this.añoEscolar = añoEscolar;
 	}
 

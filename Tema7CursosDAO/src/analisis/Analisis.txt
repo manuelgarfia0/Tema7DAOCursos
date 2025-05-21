@@ -1,3 +1,8 @@
+public class Constantes
+	+ static final String URL
+	+ static final String USUARIO
+	+ static final String CONTRASEÑA
+
 public class Curso
 	- int id
 	- String nombre
@@ -22,7 +27,7 @@ public class CursoDAO
 	+ ArrayList<String> listarCursos(Curso cur)
 	+ profesorACurso
 	+ listarEstudiantesCurso
-	+ void eliminarCurso(Curso cur)
+	+ int eliminarCurso(Curso cur, int idCurso)
 	
 public class Main
 	

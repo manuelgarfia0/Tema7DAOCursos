@@ -27,7 +27,7 @@ public class CursoDAO {
 	}
 
 	public void crearCurso(Curso cur) {
-		String sql = "INSERT INTO Curso (nombre, descripcion, año_escolar) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO cursos (nombre, descripcion, año_escolar) VALUES (?, ?, ?)";
 
 		PreparedStatement ps;
 		try {
@@ -35,7 +35,7 @@ public class CursoDAO {
 
 			ps.setString(1, cur.getNombre());
 			ps.setString(2, cur.getDescripcion());
-			ps.setString(3, cur.getAñoEscolar());
+			ps.setInt(3, cur.getAñoEscolar());
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -54,7 +54,7 @@ public class CursoDAO {
 			ResultSet rs = ps.executeQuery(sql);
 
 			while (rs.next()) {
-				curso = new Curso(rs.getString(1), rs.getString(2), rs.getString(3));
+				curso = new Curso(rs.getString(1), rs.getString(2), rs.getInt(3));
 				lista.add(curso);
 			}
 		} catch (SQLException e) {
@@ -64,9 +64,21 @@ public class CursoDAO {
 		return lista;
 	}
 
-	public void eliminarCurso(Curso cur) {
-		String sql = "DELETE FROM cursos WHERE id = ?";
+	public int eliminarCurso(int idCurso) {
 
+		String sql = "DELETE FROM cursos WHERE id_curso = ?";
+		int filasEliminadas = 0;
+
+		try {
+			PreparedStatement ps = conexion.prepareStatement(sql);
+
+			ps.setInt(1, idCurso);
+
+			filasEliminadas = ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error con la consulta: " + e.getMessage());
+		}
+		return filasEliminadas;
 	}
 
 }
