@@ -7,27 +7,42 @@ public class Curso
 	- int id
 	- String nombre
 	- String descripcion
-	- String añoEscolar
-  -------------------------------
-	+ Curso(String nombre, String descripcion, String añoEscolar)
+	- int añoEscolar
+  ----------------------------------------
+	+ Curso(String nombre, String descripcion, int añoEscolar)
 	+ int getId()
+	+ void setId(int id)
 	+ String getNombre()
 	+ void setNombre(String nombre)
 	+ String getDescripcion()
 	+ void setDescripcion(String descripcion)
-	+ String getAñoEscolar()
-	+ void setAñoEscolar(String añoEscolar)
-	
+	+ int getAñoEscolar()
+	+ void setAñoEscolar(int añoEscolar)
+	+ String toString()
+
 public class CursoDAO
-	- Conection conexion
-  -------------------------------
+	- Connection conexion
+  ----------------------------------------
 	+ CursoDAO()
 	+ Connection getConexion()
 	+ void crearCurso(Curso cur)
-	+ ArrayList<String> listarCursos()
-	+ profesorACurso
-	+ listarEstudiantesCurso
+	+ ArrayList<Curso> listarCursos()
+	+ boolean asignarProfesorACurso(int idProfesor, int idCurso)
+	+ ArrayList<String> listarEstudiantesCurso(int idCurso)
 	+ int eliminarCurso(int idCurso)
-	
+	- boolean existeProfesor(int idProfesor)
+	- boolean existeCurso(int idCurso)
+	- boolean existeAsignacion(int idProfesor, int idCurso)
+	+ void cerrarConexion()
+
 public class Main
-	
+	- static Scanner scanner
+  ----------------------------------------
+	+ static void main(String[] args)
+	- static Curso datosCurso()
+	+ static int pedirIdCurso()
+	+ static int pedirIdProfesor()
+	+ static void menu()
+	- static void listarTodosCursos(CursoDAO curDAO)
+	- static void asignarProfesorACurso(CursoDAO curDAO)
+	- static void listarEstudiantesDeCurso(CursoDAO curDAO)

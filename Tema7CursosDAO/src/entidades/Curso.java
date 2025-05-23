@@ -31,10 +31,16 @@ public class Curso {
 	 * @param añoEscolar  año escolar del curso.
 	 */
 	public Curso(String nombre, String descripcion, int añoEscolar) {
-		super();
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.añoEscolar = añoEscolar;
+		if (nombre != null && !nombre.isEmpty()) {
+			this.nombre = nombre;
+		}
+		if (descripcion != null && !descripcion.isEmpty()) {
+			this.descripcion = descripcion;
+		}
+		if (añoEscolar > 0) {
+			this.añoEscolar = añoEscolar;
+		}
+
 	}
 
 	/**
@@ -44,6 +50,15 @@ public class Curso {
 	 */
 	public int getId() {
 		return id;
+	}
+
+	/**
+	 * Establece el id del curso.
+	 * 
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	/**
@@ -100,4 +115,14 @@ public class Curso {
 		this.añoEscolar = añoEscolar;
 	}
 
+	/**
+	 * Devuelve una representación en cadena del curso.
+	 * 
+	 * @return String con la información del curso
+	 */
+	@Override
+	public String toString() {
+		return "ID: " + id + " | Nombre: " + nombre + " | Descripción: " + descripcion + " | Año Escolar: "
+				+ añoEscolar;
+	}
 }
